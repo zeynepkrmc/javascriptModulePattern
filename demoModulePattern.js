@@ -37,6 +37,8 @@ const products = [
 //ProductController üzerinden public üyelere ulaşıp kullanma
 ProductController.addProduct(products[0]);
 ProductController.addProduct(products[1]);
+
+ProductController.removeProduct(products[0]);
 ProductController.addProduct(products[2]);
 
 console.log(ProductController.getProducts());
