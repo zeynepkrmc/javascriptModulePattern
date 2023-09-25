@@ -1,8 +1,14 @@
+const products = [
+    {name: 'Samsung', price: 50000 , type: 'phone'},
+    {name: 'Huawei', price: 40000 , type: 'phone'},
+    {name: 'Apple', price: 94000 , type: 'phone'}
+];//product controller gets the products from databse e.g.
+
 //to make this module ready to use we need to assign it to a variable like below
 
-var ProductController = (function(){
+var ProductController = (function(data){
 
-    var collections = [];
+    var collections = data || []; //if it is nıt null data = collections vice versa is collection is created as an empty array
 
     //add products to collections
     const addProduct = function(product){
@@ -26,13 +32,9 @@ var ProductController = (function(){
         removeProduct,
         getProducts
     }
-})();
+})(products);//products are sent as parameters here.
 
-const products = [
-    {name: 'Samsung', price: 50000 , type: 'phone'},
-    {name: 'Huawei', price: 40000 , type: 'phone'},
-    {name: 'Apple', price: 94000 , type: 'phone'}
-];
+
 
 //ProductController üzerinden public üyelere ulaşıp kullanma
 ProductController.addProduct(products[0]);
