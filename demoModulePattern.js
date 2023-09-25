@@ -8,7 +8,7 @@ const products = [
 
 var ProductController = (function(data){
 
-    var collections = data || []; //if it is nıt null data = collections vice versa is collection is created as an empty array
+    var collections = data || []; //if it is not null data = collections vice versa is collection is created as an empty array.
 
     //add products to collections
     const addProduct = function(product){
@@ -44,3 +44,16 @@ ProductController.removeProduct(products[0]);
 ProductController.addProduct(products[2]);
 
 console.log(ProductController.getProducts());
+
+//Module extending without changing main module
+var extended = (function(m){
+    m.succesfullShopping = function(){
+        console.log('shopping is approved');
+    }
+    //return extended module
+    return m;
+
+})(ProductController || {}); //we want to extend product controller, sent empty parameter
+
+extended.succesfullShopping();
+console.log(extended.getProducts());
