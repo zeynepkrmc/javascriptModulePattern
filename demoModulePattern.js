@@ -28,9 +28,15 @@ var ProductController = (function(){
     }
 })();
 
+const products = [
+    {name: 'Samsung', price: 50000 , type: 'phone'},
+    {name: 'Huawei', price: 40000 , type: 'phone'},
+    {name: 'Apple', price: 94000 , type: 'phone'}
+];
+
 //ProductController üzerinden public üyelere ulaşıp kullanma
-ProductController.addProduct({name: 'Samsung', price: 50000 , type: 'phone'});
-ProductController.addProduct({name: 'Huawei', price: 40000 , type: 'phone'});
-ProductController.addProduct({name: 'Apple', price: 94000 , type: 'phone'});
+ProductController.addProduct(products[0]);
+ProductController.addProduct(products[1]);
+ProductController.addProduct(products[2]);
 
 console.log(ProductController.getProducts());
