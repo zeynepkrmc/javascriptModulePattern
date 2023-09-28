@@ -34,9 +34,22 @@ var Temporary = function(){
 var Factory = new Factory();
 
 
+var emps = [];
+emps.push(Factory.createEmployee('fulltime'));
+emps.push(Factory.createEmployee('fulltime'));
+emps.push(Factory.createEmployee('parttime'));
+emps.push(Factory.createEmployee('parttime'));
+emps.push(Factory.createEmployee('temporary'));
+emps.push(Factory.createEmployee('temporary'));
 
-var fulltimeEmp = Factory.createEmployee('fulltime');
+emps.forEach(function(emp){
+    emp.say();
+})
+
+
+
+/*var fulltimeEmp = Factory.createEmployee('fulltime');
 fulltimeEmp.say();
 
 var parttimeEmp = Factory.createEmployee('parttime');
-parttimeEmp.say();
+parttimeEmp.say();*/
