@@ -1,6 +1,6 @@
 //singleton pattern
 //Singleton is a design pattern that tells us that we can create only one instance of a class and that instance can be accessed globally.
-var singleton = (function(){
+/*var singleton = (function(){
 
     var instance;
     
@@ -30,3 +30,47 @@ const i2 = singleton.getInstance();
 console.log(i1.randomNumber,
     i2.randomNumber);
 //output is 0.5371848672961654 0.5371848672961654
+*/
+
+var singleton = (function(){
+
+    var instance;
+
+    function ProductController(){
+        const products = [
+            {name: 'p1'},
+            {name: 'p2'},
+            {name: 'p3'}
+        ];
+
+        const add = function(product){
+            products.push(product);
+        }
+
+        const get = function() {
+
+            return products;
+        }
+
+        return {
+            add, get
+        }
+    }
+
+    return {
+        getInstance : function(){
+            if(!instance){
+                instance = new ProductController();
+            }
+            return instance;
+        }
+    }
+
+})();
+
+const productController1 = singleton.getInstance();
+const productController2 = singleton.getInstance();
+
+productController1.add({name:'p4'});
+console.log(productController2.get());
+console.log(productController1.get());
