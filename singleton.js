@@ -74,3 +74,4 @@ const productController2 = singleton.getInstance();
 productController1.add({name:'p4'});
 console.log(productController2.get());
 console.log(productController1.get());
+//Only one instance is produced with singleton pattern.
